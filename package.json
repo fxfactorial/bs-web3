@@ -6,9 +6,7 @@
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world"
   },
-  "keywords": [
-    "BuckleScript"
-  ],
+  "keywords": ["BuckleScript"],
   "author": "edgar.factorial@gmail.com",
   "license": "MIT",
   "peerDependencies": {
@@ -17,8 +15,5 @@
   },
   "devDependencies": {
     "web3": "^1.0.0-beta.27"
-  },
-  "dependencies": {
-    "bs-platform": "^2.1.0"
   }
 }
