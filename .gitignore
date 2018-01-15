@@ -6,3 +6,4 @@ npm-debug.log
 /node_modules/
 lib/ocaml
 src/*.bs.js
+test/src/*.bs.js
