@@ -1,0 +1,19 @@
+{
+  "name": "bs-web3",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world"
+  },
+  "keywords": ["BuckleScript"],
+  "author": "edgar.factorial@gmail.com",
+  "license": "MIT",
+  "peerDependencies": {
+    "bs-platform": "^2.1.0",
+    "web3": "^1.0.0-beta.27"
+  },
+  "devDependencies": {
+    "web3": "^1.0.0-beta.27"
+  }
+}
