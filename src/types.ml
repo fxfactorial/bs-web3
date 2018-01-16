@@ -12,9 +12,12 @@ class type eth = object
   inherit [t] _module
 end [@bs]
 
-(* external make : (('impl provider_init_arg -> t)[@bs.ignore ]) = "web3-eth" *)
+type request = < > Js.t
 
-type _ x =
-| S :  string -> string x
-| F : (int -> unit) x
-(* external log :  ('a x [@bs.ignore]) -> 'a -> string = "hello" *)
+(* class type batch = object
+ * 
+ *   end [@bs] *)
+
+type batch =
+  <add:request -> unit [@bs.meth];
+   execute:unit -> unit [@bs.meth]> Js.t
