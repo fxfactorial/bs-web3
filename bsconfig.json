@@ -6,6 +6,7 @@
   "sources": [
     {
       "dir": "src"
+    }
   ],
   "package-specs": {
     "module": "commonjs",
