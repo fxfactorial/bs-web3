@@ -5,14 +5,7 @@
   "version": "0.0.1",
   "sources": [
     {
-      "dir": "src",
-      "subdirs": [
-        {
-          "dir": "private",
-          "public": []
-        }
-      ]
-    }
+      "dir": "src"
   ],
   "package-specs": {
     "module": "commonjs",
