@@ -1,15 +1,7 @@
-/* type t = { */
-/*   . */
-/* ""     */
-/* }; */
-/* type t = Js.t(class type _ in inherit Types._module); */
-type t = Js.t(Types.eth);
+type t;
 
-type provider;
+type address;
+[@bs.get] external coinbase : t => address = "";
 
-external make :
-  ([@bs.unwrap] [ | `provider(provider) | `provider_url(string)]) => t =
-  "web3-eth";
-
-[@bs.new] [@bs.module "web3"] [@bs.scope "eth"]
-external makeBatchRequest : unit => Types.batch = "BatchRequest";
+type balance = string;
+[@bs.send] external getBalance : t => address => balance = "";
