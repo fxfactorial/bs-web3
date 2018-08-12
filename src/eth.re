@@ -7,4 +7,5 @@ type address;
 type balance = string;
 [@bs.send] external getBalance : t => address => balance = "";
 
-
+type contract_method;
+[@bs.send] external call : contract_method => Js.Promise.t('a) = "";
