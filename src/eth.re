@@ -12,6 +12,6 @@ type transaction_data;
 
 type contract_method;
 [@bs.send] external call : contract_method => Js.Promise.t('a) = "";
-[@bs.send] external call_with : contract_method => transaction_data => Js.Promise.t('a) = "call";
+[@bs.send.pipe : contract_method] external call_with : transaction_data => Js.Promise.t('a) = "call";
 
-[@bs.send] external send : contract_method => transaction_data => Js.Promise.t('a) = "";
+[@bs.send.pipe : contract_method] external send : transaction_data => Js.Promise.t('a) = "";
