@@ -1,5 +1,8 @@
+type global;
+[@bs.val "web3"] external get : Js.undefined(global) = "";
+
 type provider;
-[@bs.val "web3.currentProvider"] external currentProvider : provider = "";
+[@bs.get] external currentProvider : global => provider = "";
 
 type t;
 [@bs.new] [@bs.module] external makeWeb3 : provider => t = "web3";
