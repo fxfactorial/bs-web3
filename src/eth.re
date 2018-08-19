@@ -9,6 +9,7 @@ type balance = string;
 
 type transaction_data;
 [@bs.obj] external make_transaction : (~from:address) => transaction_data = "";
+[@bs.obj] external make_transaction_with_value : (~value:Types.big_number) => (~from:address) => transaction_data = "";
 
 type contract_method;
 [@bs.send] external call : contract_method => Js.Promise.t('a) = "";

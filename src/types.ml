@@ -21,3 +21,7 @@ type request = < > Js.t
 type batch =
   <add:request -> unit [@bs.meth];
    execute:unit -> unit [@bs.meth]> Js.t
+
+type big_number 
+
+external toString : int -> string = "" [@@bs.send.pipe : big_number]

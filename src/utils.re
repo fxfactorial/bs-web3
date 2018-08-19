@@ -63,3 +63,7 @@ type t = {
   "rightPad": unit => unit,
   "toTwosComplement": unit => unit
 };
+
+[@bs.scope "utils"] [@bs.module "web3"] external toBN : int => Types.big_number = "";
+[@bs.scope "utils"] [@bs.module "web3"] external fromWei : Types.big_number => string => Types.big_number = "";
+[@bs.scope "utils"] [@bs.module "web3"] external toWei : Types.big_number => string => Types.big_number = ""
