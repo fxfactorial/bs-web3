@@ -1,4 +1,5 @@
 type t;
+[@bs.get] external net : t => Net.t = "";
 
 type address = string;
 [@bs.get] external accounts : t => Js.Array.t(address) = "";
