@@ -17,3 +17,6 @@ type contract_method;
 [@bs.send.pipe : contract_method] external call_with : transaction_data => Js.Promise.t('a) = "call";
 
 [@bs.send.pipe : contract_method] external send : transaction_data => Js.Promise.t('a) = "";
+
+type sign_callback = string => unit;
+[@bs.send.pipe : t] external sign : string => address => Js.Promise.t(string) = "";
