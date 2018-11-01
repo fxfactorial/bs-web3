@@ -3,6 +3,9 @@ type global;
 
 type provider;
 [@bs.get] external currentProvider : global => provider = "";
+[@bs.scope "window"] [@bs.val] external ethereum : Js.undefined(provider) = "";
+
+[@bs.send] external enable : provider => Js.Promise.t(unit) = "";
 
 type t;
 [@bs.new] [@bs.module] external makeWeb3 : provider => t = "web3";
