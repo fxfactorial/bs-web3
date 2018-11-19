@@ -12,11 +12,11 @@ type transaction_data;
 [@bs.obj] external make_transaction : (~from:address) => transaction_data = "";
 [@bs.obj] external make_transaction_with_value : (~value:Types.big_number) => (~from:address) => transaction_data = "";
 
-type contract_method;
-[@bs.send] external call : contract_method => Js.Promise.t('a) = "";
-[@bs.send.pipe : contract_method] external call_with : transaction_data => Js.Promise.t('a) = "call";
+type contract_method('a);
+[@bs.send] external call : contract_method('a) => Js.Promise.t('a) = "";
+[@bs.send.pipe : contract_method('a)] external call_with : transaction_data => Js.Promise.t('a) = "call";
 
-[@bs.send.pipe : contract_method] external send : transaction_data => Js.Promise.t('a) = "";
+[@bs.send.pipe : contract_method('a)] external send : transaction_data => Js.Promise.t('a) = "";
 
 type sign_callback = string => unit;
 [@bs.send.pipe : t] external sign : string => address => Js.Promise.t(string) = "";
