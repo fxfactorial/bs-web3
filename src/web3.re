@@ -7,10 +7,13 @@ type provider;
 
 [@bs.send] external enable : provider => Js.Promise.t(unit) = "";
 
+type scanner = (unit => Js.Promise.t(string));
+[@bs.get] external getScanQrCode : provider => Js.undefined(scanner) = "scanQRCode";
+
 type t;
 [@bs.new] [@bs.module] external makeWeb3 : provider => t = "web3";
 
-[@bs.get] external currentProvider__fromWeb3 : t => provider = "currentProvider";
+[@bs.get] external getCurrentProvider : t => provider = "currentProvider";
 
 [@bs.get] external eth : t => Eth.t = "";
 
